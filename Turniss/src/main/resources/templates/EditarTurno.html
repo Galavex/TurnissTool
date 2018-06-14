@@ -1,0 +1,88 @@
+<!doctype html>
+<html  layout:decorate="~{layout}">
+	<head>
+		<title>Registro Turnos</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"></link>
+		
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+		<script src="/js/cosas.js"></script>
+		<link rel="stylesheet" type="text/css" href="/css/estilos.css"></link>
+		<meta charset="UTF-8"></meta>
+	</head>
+
+	<div layout:fragment="contenido">
+		<div class="panel panel-info">
+            <div class="panel-heading">
+              <h3 class="panel-title">Sacar turno</h3>
+            </div>
+            <div class="panel-body">
+            	<div class="container">	
+              		<div class="raw">
+              			<form action="/procesarBusqueda-turnos">
+						<div class="col-md-6">
+							
+									<label for="selectorEspecialidad">Seleccione especialidad deseada:</label>
+									<select id="selectorEspecialidad" name="especialidad">
+										<option selected name="seleccionar" disable>Seleccionar especialidad</option>
+							    		<option value="Pediatria">Pediatría</option>
+									    <option value="Cardiología">Cardiología</option>
+							 		   <option value="Oncologia">Oncología</option>
+					  				</select>
+								</div>
+								<div class="col-md-6">	
+									<label for="selectorMedico">Seleccione médico:</label>
+									<select id="selectorMedico" name="medico">
+										<option selected name="seleccionar" disable>Seleccionar médico</option>
+										<option class="especialidad Pediatria" value="6bd3519e-321d-4e10-956d-2c4dd3af52bf">Claudia Lopez</option>
+									    <option class="especialidad Pediatria" value="0f9d2802-a6a6-4b73-bd54-8eaa321e73c6">Carlos Alberto</option>
+									    <option class="especialidad Pediatria" value="222c6d82-4871-4ab4-9f0a-90a8e2427cb4">Juan Roberto</option>
+									    <option class="especialidad Cardiología" value="4926aa31-4031-4730-b382-4d08a6c54802">Carla Frin</option>
+								    </select>
+								</div>
+								<div class="col-md-6">	
+									<label for="fecha">Ingrese la fecha en que quiere el turno:</label>
+									<input type="date" name="fecha" placeholder="A partir de que día "></input>
+								</div>
+							
+									<button type="submit" class="btn btn-default">Buscar</button>
+								</div>
+							</form>
+					
+			
+				
+					<div class="row">
+						<div class="col-md-6 tabla-turnos">
+							<table style="width:100%">
+								<thead>
+								  <tr>
+								    <th>Médico</th> 
+								    <th>Fecha</th>
+								    <th>Hora</th>
+								    <th>Sacar Turno</th>
+								  </tr>
+								</thead>
+								</tbody>
+								  <tr th:each="turno:${listadoTurnos}">
+								  	<td class="columna" th:text="${turno.medico.nombre + ' ' + turno.medico.apellido }"></td>
+								    <td class="columna" th:text="${turno.fecha}"></td>
+									<td class="columna" th:text="${turno.horario}"></td>
+								    <td class="columna"> 
+								 <!--<a th:href="'/procesar-turno/' + ${turno.medico.id_usuario} + ?fecha= + ${turno.fecha} ">X</a> -->
+								 <a th:href="@{/modificar-turno/(id=${turno.medico.id_usuario},hora=${turno.horario},fecha=${turno.fecha})}"><i class="fas fa-check-circle"></i></a> 
+								    </td>
+								  </tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+		
+				
+	</div>
+
+</html>

@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en" layout:decorate="~{layout}">
+
+	<head>
+		<title>Detalle Paciente</title>
+		<link rel="stylesheet" type="text/css" href="/css/estilos.css"></link>
+		<meta charset="UTF-8"></meta>
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+		<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+		<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+		<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+		<!------ Include the above in your HEAD tag ---------->
+		
+	</head>
+
+<div class="container">
+	<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad" layout:fragment="contenido">
+   
+   
+          <div class="panel panel-info">
+            <div class="panel-heading">
+              <h3 class="panel-title">Editar perfil</h3>
+            </div>
+            <div class="panel-body">
+              <div class="row">
+                
+                
+                 <div class=" col-md-9 col-lg-9 "> 
+                  <table class="table table-user-information">
+                    <tbody>
+                     <form action="/modificar-paciente">
+                      <p>Debe completar todos los datos para editar su perfil</p>
+                      <tr>
+                        <td >Nombre:</td>
+                        <td th:text="${nombre}"></td>
+                        <td> <input class="form-control" type="text" name="nombre" placeholder="Nuevo nombre..."></input> </td>
+                      </tr>
+                      <tr>
+                        <td >Apellido:</td>
+                        <td th:text="${apellido}"></td>
+                        <td> <input class="form-control" type="text" name="apellido" placeholder="Nuevo apellido..."></input> </td>
+                      </tr>
+                      <tr>
+                        <td>Dirección:</td>
+                        <td th:text="${direccion}"></td>
+                        <td> <input class="form-control" type="text" name="direccion" placeholder="Nueva dirección..."></input> </td>
+                      </tr>
+                      <tr>
+                        <td>Teléfono:</td>
+                        <td th:text="${telefono}"></td>
+                        <td><input class="form-control" type="text" name="telefono" placeholder="Nuevo telefono..."></input> </td>
+                      </tr>
+                      <tr>
+                        <td>Email:</td>
+                        <td th:text="${mail}"></td>
+                        <td> <input class="form-control" type="email" name="email" placeholder="Nuevo Email..."></input> </td>
+                      </tr>
+                      <tr>
+                        <td>DNI:</td>
+                        <td th:text="${dni}"></td>
+                        <td><input class="form-control" type="text" name="dni" placeholder="Nuevo DNI..."></input> </td>
+                      </tr>
+                      <tr>
+                        <td>Contraseña:</td>
+                        <td th:text="${password}"></td>
+                        <td><input class="form-control" type="text" name="password" placeholder="Nueva contraseña..."></input> </td>
+                      </tr>
+                      <button type="submit" class="btn btn-sm btn-warning">Guardar Cambios</button>
+                      
+                     </form>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+                 
+            
+          </div>
+        </div>
+</div>
+</html>

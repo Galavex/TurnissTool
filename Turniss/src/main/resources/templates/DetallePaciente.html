@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en" layout:decorate="~{layout}">
+
+	<head>
+		<title>Detalle Paciente</title>
+		<link rel="stylesheet" type="text/css" href="/css/estilos.css"></link>
+		<meta charset="UTF-8"></meta>
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+		<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+		<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+		<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+		<!------ Include the above in your HEAD tag ---------->
+		
+	</head>
+
+	
+	  
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad" layout:fragment="contenido">
+   
+   
+          <div class="panel panel-info">
+            <div class="panel-heading">
+              <h3 class="panel-title">Tarjeta Paciente</h3>
+            </div>
+            <div class="panel-body">
+              <div class="row">
+                
+                
+                 <div class=" col-md-9 col-lg-9 "> 
+                  <table class="table table-user-information">
+                    <tbody>
+                      <tr>
+                        <td >Nombre:</td>
+                        <td th:text="${nombre}"></td>
+                      </tr>
+                      <tr>
+                        <td >Apellido:</td>
+                        <td th:text="${apellido}"></td>
+                      </tr>
+                      <tr>
+                        <td>Dirección:</td>
+                        <td th:text="${direccion}"></td>
+                      </tr>
+                      <tr>
+                        <td>Teléfono:</td>
+                        <td th:text="${telefono}"></td>
+                      </tr>  
+                      <tr>
+                        <td>Email:</td>
+                        <td th:text="${mail}"></td>
+                      </tr>
+                        <td>DNI:</td>
+                        <td th:text="${dni}"></td>
+                           
+                      </tr>
+                     
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+                 <div class="panel-footer">
+                        
+                        <a href="/editar-paciente" data-original-title="Edit this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-warning"><i class="glyphicon glyphicon-edit"></i></a>
+                        <a href="/listado-turnos-paciente" data-original-title="Lista turnos" data-toggle="tooltip" type="button" class="btn btn-sm btn-primary"></i>Historial de turnos</a>
+                        <span class="pull-right">
+                            <a href="/inicio" data-original-title="Edit this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-warning"><i class="fas fa-undo"></i> Inicio</a>
+                            
+                        </span>
+                    </div>
+            
+          </div>
+        </div>
+      
+		
+
+
+</html>

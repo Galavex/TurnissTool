@@ -1,0 +1,44 @@
+<!doctype html>
+<html  layout:decorate="~{layout}">
+
+	<head>
+		<title>Listado de Medicos</title>
+		<link rel="stylesheet" type="text/css" href="/css/estilos.css"></link>
+		<meta charset="UTF-8"></meta>
+	</head>
+
+	<div layout:fragment="contenido">
+		
+		<br></br>
+		
+		<form action="/procesarBusqueda-medicos">
+			<input type="text" name="palabraBuscada" placeholder="Nombre..."></input>
+			<input type="submit" value="Buscar"></input>
+		</form>
+		
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<table style="width:100%">
+						  <tr>
+						    <th>Nombre</th> 
+						    <th>Matrícula</th>
+						    <th>Especialidad</th>
+						    
+						  </tr >
+						  <tr th:each="medico:${listadoMedicos}">
+						    
+						    <td class="columna" ><label th:text="${medico.nombre} + ' ' + ${medico.apellido}">Nombre</label></a> </td> 
+						    <td class="columna" th:text="${medico.matricula}">Matrícula</td>
+						    <td class="columna" th:text="${medico.especialidad}">Especialidad</td>
+						    							
+						  </tr>
+					</table>
+				</div>
+			
+			</div>
+		</div>
+		
+	</div>
+
+</html>

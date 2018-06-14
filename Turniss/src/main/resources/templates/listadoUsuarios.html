@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+
+	<head>
+		<title>Listado de Usuarios</title>
+		<link rel="stylesheet" type="text/css" href="/css/estilos.css"></link>
+		<meta charset="UTF-8"></meta>
+	</head>
+
+	<body>
+		<form action="/procesarBusqueda-medicos">
+			<input type="text" name="palabraBuscada" placeholder="Nombre..."></input>
+			<input type="submit" value="Buscar"></input>
+		</form>
+		
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<table style="width:100%">
+						  <tr>
+						    <th>Id</th>
+						    <th>Nombre</th> 
+						    <th>Apellido</th>
+						    <th>DNI:</th>
+						    <th>Dirección</th>
+						    <th>Teléfono</th>
+						    <th>Mail</th>
+						    <th>Contraseña</th>
+						    <th></th>
+						    <th>Eliminar</th>
+						  </tr >
+						  <tr th:each="usuario:${listadoUsuarios}">
+						    <td class="columna" th:text="${usuario.id}"></td>
+						    <td class="columna" ><a th:href="'/detalle-usuario/' + ${usuario.id}"><label th:text="${usuario.nombre}">Nombre</label></a></td> 
+						    <td class="columna" th:text="${usuario.apellido}">Apellido</td>
+						    <td class="columna" th:text="${usuario.dni}">DNI</td>
+						    <td class="columna" th:text="${usuario.direccion}">Dirección</td>
+							<td class="columna" th:text="${usuario.telefono}">Teléfono</tdl>
+							<td class="columna" th:text="${usuario.mail}">Mail</td>
+							<td class="columna" th:text="${usuario.password}">Contraseña</td>
+						    <td class="columna"> <a th:href="'/eliminar-usuario/' + ${usuario.id}">X</a> </td>
+						  </tr>
+					</table>
+				</div>
+			
+			</div>
+		</div>
+		
+	</body>
+
+</html>

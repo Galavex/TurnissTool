@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Detalle Médico</title>
+		<link rel="stylesheet" type="text/css" href="/css/estilos.css"></link>
+		<meta charset="UTF-8"></meta>
+	</head>
+
+	<body>
+		<div class="tarjeta-usuario">
+			<label>Nombre: </label><label th:text="${nombre}">Nombre</label><br></br>
+			<label>Apellido: </label><label th:text="${apellido}">Apeliido</label><br></br>
+			<label>Matrícula: </label><label th:text="${matricula}">Matrícula</label><br></br>
+			<label>Especialidad: </label><label th:text="${especialidad}">Especialidad</label><br></br>
+			<label>Password: </label><label th:text="${password}">Password</label><br></br>
+		</div>
+	</body>
+
+</html>

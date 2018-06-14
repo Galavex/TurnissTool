@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+
+	<head>
+		<title>Listado de horarios</title>
+		<link rel="stylesheet" type="text/css" href="/css/estilos.css"></link>
+		<meta charset="UTF-8"></meta>
+	</head>
+
+	<body>
+		<form action="/procesarBusqueda-horarios>
+			<input type="text" name="palabraBuscada" placeholder="Nombre medico..."></input>
+			<input type="submit" value="Buscar"></input>
+		</form>
+		
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<table style="width:100%">
+						  <tr>
+						    <th>Id</th>
+						    <th>Medico</th> 
+						    <th>Comienza</th>
+						    <th>Termina</th>
+						    <th>Dia</th>
+						  </tr >
+						  <tr th:each="horario:${listadoHorarios}">
+						    <td class="columna" th:text="${horario.id}"></td>
+						    <td class="columna" th:text="${horario.medico}"></td>
+						    <td class="columna" th:text="${horario.comienza}"></td>
+						    <td class="columna" th:text="${horario.termina}"></td>
+						    <td class="columna" th:text="${turno.dia}"></td>
+							<td class="columna"> <a th:href="'/eliminar-horario/' + ${horario.id}">X</a> </td>
+							
+						  </tr>
+					</table>
+				</div>
+			
+			</div>
+		</div>
+		
+	</body>
+
+</html>

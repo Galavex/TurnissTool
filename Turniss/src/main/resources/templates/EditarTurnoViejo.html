@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<head>
+<title>Editar Turno</title>
+<link rel="stylesheet" type="text/css" href="/css/estilos.css"></link>
+<meta charset="UTF-8"></meta>
+</head>
+
+<body>
+	<div class="tarjeta-usuario">
+		<form th:action="/modificar-turno">
+			<div class="form-group">
+    			<label for="medico">Médico:</label>
+    			<input class="form-control" type="text" name="medico" placeholder="Ingrese Medico..."></input>
+  			</div>
+			<div class="form-group">
+    			<label for="especialidad">Especialidad:</label>
+    			<input class="form-control" type="text" name="especialidad" placeholder="Ingrese especialidad..."></input>
+  			</div>
+			<div class="form-group">
+    			<label for="fecha">Fecha:</label>
+    			<input class="form-control" type="text" name="fecha" placeholder="Ingrese fecha DD/MM/AA..."></input>
+  			</div>
+  			<div class="form-group">
+    			<label for="horario">Horario:</label>
+    			<input class="form-control" type="text" name="horario" placeholder="Ingrese horario HH:MM..."></input>
+  			</div>
+			<button type="submit" class="btn btn-default">Ingresar</button>
+					
+		</form>
+	</div>
+</body>
+
+</html>

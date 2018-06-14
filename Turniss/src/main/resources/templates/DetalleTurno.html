@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Detalle Turno</title>
+		<link rel="stylesheet" type="text/css" href="/css/estilos.css"></link>
+		<meta charset="UTF-8"></meta>
+	</head>
+
+	<body>
+		<div class="tarjeta-turno">
+			<label>Paciente: </label><label th:text="${paciente}"></label><br></br>
+			<label>Apellido: </label><label th:text="${medico}"></label><br></br>
+			<label>Especialidad: </label><label th:text="${especialidad}"></label><br></br>
+			<label>Fecha: </label><label th:text="${fecha}"></label><br></br>
+			<label>Horario: </label><label th:text="${horario}"></label><br></br>
+		</div>
+	</body>
+
+</html>

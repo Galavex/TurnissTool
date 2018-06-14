@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en" layout:decorate="~{layout}">
+
+	<head>
+		<title>Listado de Turnos</title>
+		<link rel="stylesheet" type="text/css" href="/css/estilos.css"></link>
+		<meta charset="UTF-8"></meta>
+		<script src="/js/cosas.js"></script>
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+	</head>
+
+	
+		
+		
+		<div class="container" layout:fragment="contenido">
+			<br></br>
+			<div class="row">
+				<div class="col-12">
+					<table style="width:100%">
+						  <tr>
+						    <th>Medico</th>
+						    <th>Fecha</th> 
+						    <th>Horario</th>
+						    <th>Eliminar</th>
+						    
+						  </tr >
+						  <tr th:each="turnoBasico:${listadoTurnos}">
+						    <td class="columna" th:text="${turnoBasico.medico}"></td>
+						    <td class="columna" th:text="${turnoBasico.fecha}"></td>
+						    <td class="columna" th:text="${turnoBasico.hora}"></td>
+							<td class="columna"> <a th:href="@{/eliminar-turno(id = ${turnoBasico.id})}"> <i class="far fa-trash-alt"></i> </a> </td>
+							
+						  </tr>
+					</table>
+				</div>
+			
+			</div>
+		</div>
+		
+	
+
+</html>

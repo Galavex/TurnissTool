@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<head>
+<title>Editar Horario</title>
+<link rel="stylesheet" type="text/css" href="/css/estilos.css"></link>
+<meta charset="UTF-8"></meta>
+</head>
+
+<body>
+	<div class="tarjeta-usuario">
+		<form th:action="'/modificar-horario/' + ${id}">
+			<div class="form-group">
+    			<label for="medico">Médico:</label>
+    			<input class="form-control" type="text" name="medico" placeholder="Ingrese Medico..."></input>
+  			</div>
+			<div class="form-group">
+    			<label for="comienza">Comienza:</label>
+    			<input class="form-control" type="text" name="comienza" placeholder="Ingrese horario de comienzo HH:MM..."></input>
+  			</div>
+			<div class="form-group">
+    			<label for="termina">Termina:</label>
+    			<input class="form-control" type="text" name="termina" placeholder="Ingrese horario que finaliza HH:MM..."></input>
+  			</div>
+  			<div class="form-group">
+    			<label for="dia">Dia:</label>
+    			<input class="form-control" type="text" name="dia" placeholder="Ingrese dia que trabaja..."></input>
+  			</div>
+			<button type="submit" class="btn btn-default">Ingresar</button>
+					
+		</form>
+	</div>
+</body>
+
+</html>

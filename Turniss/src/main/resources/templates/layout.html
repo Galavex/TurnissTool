@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  
+  	<meta charset="utf-8"></meta>
+  	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"></link>
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<!-- Popper JS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+	<!-- Custom styles for this template -->
+    <link href="css/layout-inicio.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+     
+    <script src="/js/bootstrap.bundle.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+	
+		
+		
+	
+			 
+  </head>
+    
+	<body>
+	    <!-- Navigation -->
+	    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+	      <div class="container">
+	        <a class="navbar-brand" href="/inicio"><i class="far fa-hospital"></i> Hospital Bando Verde</a>
+	        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+	          <span class="navbar-toggler-icon"></span>
+	        </button>
+	        <div class="collapse navbar-collapse" id="navbarResponsive">
+	          <ul class="navbar-nav ml-auto">
+	          	<li th:if="${estaLogeado} == false" class="nav-item">
+	          	 	<a class="nav-link" href="#" id="navbarDropdownLogin" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="far fa-calendar-alt"></i> Sacar Turno</a>
+	          	  		
+	          	  	 	<div id="loginNavVarContent" class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownLogin">
+							<form action="/procesar-login-paciente" method="POST">
+								<label for="email"><b>Enter email</b></label>
+								<input type="text" placeholder="..." name="email" required>
+									
+								<label for="psw"><b>Enter Password</b></label>
+								<input type="password" placeholder="..." name="password" required>
+									        
+								<button type="submit">Login</button>
+							</form>
+					 	</div>
+	          	  	
+	          	</li>
+	            <li th:if="${estaLogeado} == true" class="nav-item">
+	              <a class="nav-link" href="/registro-turno"><i class="far fa-calendar-alt"></i> Sacar Turno</a>
+	            </li>
+	            <li th:if="${estaLogeado} == true" class="nav-item">
+	              <a class="nav-link" href="/detalle-paciente"><i class="fas fa-user-circle"></i> Mi Perfil</a>
+	            </li>
+	            <li th:if="${estaLogeado} == true" class="nav-item">
+	              <a class="nav-link" href="/logout"><i class="fas fa-sign-out-alt"></i> Cerrar Sesion</a>
+	            </li>
+	            <li class="nav-item dropdown">
+	              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	                <i class="fas fa-list-ul"></i>
+	                 Otros
+	              </a>
+	              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
+	                
+	                <a class="dropdown-item" href="/contacto">Contacto</a>
+	                <a class="dropdown-item" href="/mapa">Direccion</a>
+	              </div>
+	            </li>
+	           	            
+	          </ul>
+	        </div>
+	      </div>
+	    </nav>
+	
+		<div layout:fragment="contenido">
+		    
+		</div>
+	    
+	
+	    
+	</body>
+  
+  
+</html>

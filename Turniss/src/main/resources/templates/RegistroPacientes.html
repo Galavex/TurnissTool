@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Registro</title>
+		<meta charset="utf-8">
+  		<meta name="viewport" content="width=device-width, initial-scale=1">
+ 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="/css/estilos.css"></link>
+	</head>
+
+	<body>
+	
+		<h2>Registro de paciente:</h2>
+		
+		<form action="/insertar-paciente">
+			<div class="form-group">
+    			<label for="nombre">Nombre:</label>
+    			<input class="form-control" type="text" name="nombre" placeholder="Ingrese nombre..."></input>
+  			</div>
+			<div class="form-group">
+    			<label for="apellido">Apellido:</label>
+    			<input class="form-control" type="text" name="apellido" placeholder="Ingrese apellido..."></input>
+  			</div>
+			<div class="form-group">
+    			<label for="dni">DNI:</label>
+    			<input class="form-control" type="text" name="dni" placeholder="Ingrese DNI..."></input>
+  			</div>
+			<div class="form-group">
+    			<label for="direccion">Dirección:</label>
+    			<input class="form-control" type="text" name="direccion" placeholder="Ingrese dirección..."></input>
+  			</div>
+			<div class="form-group">
+    			<label for="telefono">Teléfono:</label>
+    			<input class="form-control" type="text" name="telefono" placeholder="Ingrese teléfono..."></input>
+  			</div>
+			<div class="form-group">
+    			<label for="nombre">Email:</label>
+    			<input class="form-control" type="email" name="email" placeholder="Ingrese Email..."></input>
+  			</div>
+			<div class="form-group">
+    			<label for="nombre">Contraseña:</label>
+    			<input class="form-control" type="password" name="password" placeholder="Ingrese contraseña..."></input>
+  			</div>
+			<button type="submit" class="btn btn-default">Ingresar</button>
+		</form>
+		
+	</body>
+
+</html>

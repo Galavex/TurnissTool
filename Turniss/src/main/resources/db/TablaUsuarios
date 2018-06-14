@@ -1,0 +1,117 @@
+CREATE SEQUENCE public.usuarios_id_seq
+    INCREMENT 1
+    START 1
+    MINVALUE 1
+    MAXVALUE 2147483647
+    CACHE 1;
+
+ALTER SEQUENCE public.usuarios_id_seq
+    OWNER TO postgres;
+
+-- Table: public.usuarios
+
+-- DROP TABLE public.usuarios;
+
+CREATE TABLE public.usuarios
+(
+    id integer NOT NULL DEFAULT nextval('usuarios_id_seq'::regclass),
+    nombre text COLLATE pg_catalog."default" NOT NULL,
+    apellido text COLLATE pg_catalog."default" NOT NULL,
+    dni integer NOT NULL,
+    mail text COLLATE pg_catalog."default" NOT NULL,
+    password text COLLATE pg_catalog."default" NOT NULL,
+    direccion text COLLATE pg_catalog."default" NOT NULL,
+    telefono integer NOT NULL,
+    CONSTRAINT usuarios_pkey PRIMARY KEY (id, nombre, apellido, dni, mail, password, direccion, telefono)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.usuarios
+    OWNER to postgres;
+    
+    
+CREATE SEQUENCE public.medicos_id_seq
+    INCREMENT 1
+    START 2
+    MINVALUE 1
+    MAXVALUE 2147483647
+    CACHE 1;
+
+ALTER SEQUENCE public.medicos_id_seq
+    OWNER TO postgres;
+    
+    
+-- Table: public.medicos
+
+-- DROP TABLE public.medicos;
+
+CREATE TABLE public.medicos
+(
+    id integer NOT NULL DEFAULT nextval('medicos_id_seq'::regclass),
+    nombre text COLLATE pg_catalog."default" NOT NULL,
+    apellido text COLLATE pg_catalog."default" NOT NULL,
+    especialidad text COLLATE pg_catalog."default" NOT NULL,
+    matricula integer NOT NULL,
+    CONSTRAINT medicos_pkey PRIMARY KEY (id, nombre, apellido, especialidad, matricula)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.medicos
+    OWNER to postgres;
+    
+    
+-- Table: public.turnos
+
+-- DROP TABLE public.turnos;
+
+CREATE TABLE public.turnos
+(
+    paciente integer NOT NULL,
+    medico integer NOT NULL,
+    especialidad text COLLATE pg_catalog."default" NOT NULL,
+    dia text COLLATE pg_catalog."default" NOT NULL,
+    hora integer NOT NULL,
+    mes text COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT turnos_pkey PRIMARY KEY (paciente, medico, especialidad, dia, hora, mes)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.turnos
+    OWNER to postgres;
+    
+    
+-- Table: public.horarios
+
+-- DROP TABLE public.horarios;
+
+CREATE TABLE public.horarios
+(
+    dia integer NOT NULL,
+    comienzo integer NOT NULL,
+    finaliza integer NOT NULL,
+    medico integer NOT NULL,
+    CONSTRAINT horarios_pkey PRIMARY KEY (dia, comienzo, finaliza, medico)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.horarios
+    OWNER to postgres;
+    
+    
+    
+    
+    
+    
+select *  from usuarios inner join pacientes on usuarios.id = pacientes.id_usuario;
